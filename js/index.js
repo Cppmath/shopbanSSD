@@ -380,7 +380,7 @@ var productsMua =
                             </span>
                         </div>
                     </div>
-                    <div class="buy-done-item-delete" data-index="${product.id}>
+                    <div class="buy-done-item-delete" data-index="${product.id}">
                         <i class="buy-done-item-delete-icon fa-solid fa-xmark"></i>
                     </div>
                 </div>
@@ -404,7 +404,6 @@ const clickMuas = $$('.product-modal-buy')
 // handle cart
 cartItemList.onclick = (e) => {
     if(e.target.closest('.buy-done-item-btn-add')){
-        console.log(123)
         let index = e.target.dataset.index;
         products[index].luotMua++
         tongLuotMua++
@@ -412,21 +411,23 @@ cartItemList.onclick = (e) => {
         renderCart()
     }
     if(e.target.closest('.buy-done-item-btn-distract')){
+        console.log(e.target.dataset.index)
         let index = e.target.dataset.index;
         products[index].luotMua--
         tongLuotMua--
         cartNumber.innerHTML = `${tongLuotMua}`
         renderCart()
     }
+    // console.log(e.target.dataset.index)
+
     if(e.target.closest('.buy-done-item-delete')){
-        let index = e.target.dataset.index;
-        let boLuotMua = products[index].luotMua
-        cartNumber.innerHTML = `${tongLuotMua - boLuotMua}`
+
+        let index = e.target.closest('.buy-done-item-delete').dataset.index;
+        let boLuotMua = products[index].luotMua;
+        tongLuotMua = tongLuotMua -boLuotMua;
+        cartNumber.innerHTML = `${tongLuotMua}`
         products[index].luotMua = 0;
+        console.log(products[index].luotMua)
         renderCart()
     }
 }
-
-// cartItemList.onclick = (e) => {
-//     
-// }
