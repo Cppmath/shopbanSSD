@@ -208,7 +208,7 @@ body{
 .buy-done-table{
     display: none;
     width: 400px;
-    min-height: 100px;
+    min-height: 0;
     position: absolute;
     right: 0;
     top: 61px;
@@ -225,7 +225,7 @@ body{
     border-color: transparent transparent #fff transparent;
     position: absolute;
     top: -45px;
-    right: 68px;
+    right: 75px;
 }
 
 .header-cart-link:hover .buy-done-table{
@@ -233,7 +233,8 @@ body{
 }
 
 .buy-done-list{
-
+    height: 500px;
+    overflow-y: scroll;
 }
 
 .buy-done-item{
