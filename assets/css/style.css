@@ -233,7 +233,8 @@ body{
 }
 
 .buy-done-list{
-    height: 500px;
+    min-height: 0;
+    max-height: 500px;
     overflow-y: scroll;
 }
 
@@ -332,7 +333,7 @@ body{
 }
 
 .header-cart-number{
-
+    color: #ffba00;
 }
 
 .header-cart-name{
@@ -437,7 +438,7 @@ body{
 .sidebar-item{
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
 }
 
 .sidebar-item-form{

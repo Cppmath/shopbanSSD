@@ -298,8 +298,15 @@ const $$ = document.querySelectorAll.bind(document)
 const productList = $('.main-product-list')
 const cartNumber = $('.header-cart-number')
 const cartItemList = $('.buy-done-list')
+const tienElement = $('.buy-done-total-coin')
 
-
+// tinh tong tien
+function tinhTien() {
+        tongTien = 
+            products.filter(product => product.luotMua > 0)
+                    .reduce((total,product) => total + product.luotMua * product.price, 0)
+    tienElement.innerHTML = `${tongTien}.000đ`     
+}
 
 // render sp
 productList.innerHTML = products.map((product, index) => {
@@ -373,17 +380,18 @@ var productsMua =
                             </span>
                         </div>
                     </div>
-                    <div class="buy-done-item-delete">
+                    <div class="buy-done-item-delete" data-index="${product.id}>
                         <i class="buy-done-item-delete-icon fa-solid fa-xmark"></i>
                     </div>
                 </div>
             `)          
         cartItemList.innerHTML = productsMua.join('')
+    tinhTien()
 }
 
 // handle click mua
 const clickMuas = $$('.product-modal-buy')
-Array.from(clickMuas).forEach((clickMua, index) => {
+    Array.from(clickMuas).forEach((clickMua, index) => {
     clickMua.onclick = () => {
         products[index].luotMua++;
         // render so luong mua
@@ -395,15 +403,30 @@ Array.from(clickMuas).forEach((clickMua, index) => {
 
 // handle cart
 cartItemList.onclick = (e) => {
-    // console.log(e.target.closest('.buy-done-item-btn-distract').dataset.index)
     if(e.target.closest('.buy-done-item-btn-add')){
+        console.log(123)
         let index = e.target.dataset.index;
         products[index].luotMua++
+        tongLuotMua++
+        cartNumber.innerHTML = `${tongLuotMua}`
         renderCart()
     }
     if(e.target.closest('.buy-done-item-btn-distract')){
         let index = e.target.dataset.index;
         products[index].luotMua--
+        tongLuotMua--
+        cartNumber.innerHTML = `${tongLuotMua}`
+        renderCart()
+    }
+    if(e.target.closest('.buy-done-item-delete')){
+        let index = e.target.dataset.index;
+        let boLuotMua = products[index].luotMua
+        cartNumber.innerHTML = `${tongLuotMua - boLuotMua}`
+        products[index].luotMua = 0;
         renderCart()
     }
 }
+
+// cartItemList.onclick = (e) => {
+//     
+// }
