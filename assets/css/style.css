@@ -450,6 +450,29 @@ body{
     margin: 10px 0px;
 }
 
+/* sider-filter */
+.sidebar-filter{
+    min-height: 0;
+}
+
+.sidebar-filter-btn{
+    height: 30px;
+    width: 60px;
+    background-color: #0a804a;
+    margin-right: auto;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-filter-btn:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 /* main-right */
 .main-right{
     flex-basis: calc(0.8 * (100% - 30px));

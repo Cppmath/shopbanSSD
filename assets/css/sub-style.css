@@ -1,0 +1,157 @@
+.slay-out{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slay-out-box{
+    width: 970px;
+    height: 527px;
+    background-color: #fff;
+    position: relative;
+}
+
+.slay_out-buy-done-item-delete{
+    position: absolute;
+    top: -25px;
+    right: -5px;
+    width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slay_out-buy-done-item-delete-icon{
+    color: #000;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 30px;
+}
+
+.slay_out-buy-done-item{
+    display: flex;
+}
+
+.slay_out-buy-done-item-pic{
+    flex-basis: 359px;
+    border: 1px solid #a9a9a9;
+    margin: 20px 20px;
+}
+
+.slay_out-buy-done-item-img{
+    width: 100%;
+}
+
+.slay_out-buy-done-item-info{
+    flex: 1;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    line-height: 3.1rem;
+}
+
+.slay_out-buy-done-item-title{
+    font-size: 2.5rem;
+}
+
+.slay_out-buy-done-item-price-all{
+    display: flex;
+    margin-top: 20px;
+    min-height: 0;
+}
+
+.slay_out-buy-done-item-price{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #0a804a;
+    line-height: 3rem;
+}
+
+.slay_out-buy-done-item-before-price{
+    text-decoration: line-through;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: 0 20px;
+}
+
+.slay_out-buy-done-item-desc{
+    font-size: 1.8rem;
+    line-height: 1.9rem;
+    margin-top: 15px;
+    color: #a9a9a9;
+    font-weight: 400;
+}
+
+.slay_out-buy-done-item-quality{
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.slay_out-buy-done-item-btn{
+    display: flex;
+    height: 40px;
+    width: 140px;
+    justify-content: space-between;
+    font-size: 1.8rem;
+}
+
+.slay_out-buy-done-item-number{
+    flex: 1;
+    border: 0.5px solid #a9a9a9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slay_out-buy-done-item-btn-add, 
+    .slay_out-buy-done-item-btn-distract{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border: 0.5px solid #a9a9a9;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slay_out-mua-hang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #0a804a;
+    color: #fff;
+    font-weight: 600;
+    height: 50px;
+    margin: 50px 20px 0px 0px;
+    text-decoration: none;
+}
+
+/* slay-out-show */
+.slay_out-show{
+    display: flex;
+    margin-left: 20px;
+    width: 357px;
+    justify-content: center;
+}
+
+.slay_out-show-pic{
+    width: 73px;
+    margin-right: 10px;
+    border: 1px solid #a9a9a9;
+}
+
+.slay_out-show-pic:hover{
+    border: 1px solid #0a804a;
+}
+
+.slay_out-show-img{
+    width: 100%;
+}
