@@ -1,296 +1,5 @@
-var products = [
-    {
-        id: 0,
-        img: './assets/img/sp/0',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 1,
-        img: './assets/img/sp/1',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 2,
-        img: './assets/img/sp/2',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 3,
-        img: './assets/img/sp/3',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 4,
-        img: './assets/img/sp/4',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 5,
-        img: './assets/img/sp/5',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 6,
-        img: './assets/img/sp/6',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 7,
-        img: './assets/img/sp/7',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 8,
-        img: './assets/img/sp/8',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 9,
-        img: './assets/img/sp/9',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 10,
-        img: './assets/img/sp/10',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 11,
-        img: './assets/img/sp/11',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 12,
-        img: './assets/img/sp/12',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 13,
-        img: './assets/img/sp/13',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 14,
-        img: './assets/img/sp/14',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 15,
-        img: './assets/img/sp/15',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 16,
-        img: './assets/img/sp/16',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 17,
-        img: './assets/img/sp/17',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 18,
-        img: './assets/img/sp/18',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 19,
-        img: './assets/img/sp/19',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 20,
-        img: './assets/img/sp/20',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 21,
-        img: './assets/img/sp/21',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 22,
-        img: './assets/img/sp/22',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    },
-    {
-        id: 23,
-        img: './assets/img/sp/23',
-        title: 'SSD MSI SPATIUM S270 2.5-Inch SATA III 120GB SPATIUM-S270-120GB',
-        price: 280.000,
-        oldPrice: 530.000,
-        luotMua: 0,
-        desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
-        sale: 29,
-        rate: 5,
-        vote: 100,
-    }   
-]
-
-var tongLuotMua = 0;
-var tongTien = 0;
+import storage from "./ulti/storage.js";
+import { dataS } from './data/data.js'
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
@@ -300,17 +9,14 @@ const cartNumber = $('.header-cart-number')
 const cartItemList = $('.buy-done-list')
 const tienElement = $('.buy-done-total-coin')
 const mainProductList = $('.main-product-list')
-
-// // tinh tong tien
-// ;(function tinhTien() {
-//         tongTien = 
-//             products.filter(product => product.luotMua > 0)
-//                     .reduce((total,product) => total + product.luotMua * product.price, 0)
-//     tienElement.innerHTML = `${tongTien}.000đ`     
-// })()
+var data = storage.get()
+    if(!data.products){
+        data = dataS
+        storage.set(data)
+    }
 
 // render sp
-productList.innerHTML = products.map((product, index) => {
+productList.innerHTML = data.products.map((product, index) => {
     return `
     <!-- product-item 0-->
     <div class="product-item" data-index = "${product.id}">
@@ -350,12 +56,13 @@ productList.innerHTML = products.map((product, index) => {
     </div>
     `
 })
-.join('')
+    .join('')
 
 // render cart
 function renderCart(){
-var productsMua = 
-    products.filter((product) => product.luotMua > 0)
+    data = storage.get()
+    var productsMua = 
+        data.products.filter((product) => product.luotMua > 0)
             .map((product) => `
                 <!-- item 0 -->
                 <div class="buy-done-item" data-index="${product.id}">
@@ -389,22 +96,28 @@ var productsMua =
         cartItemList.innerHTML = productsMua.join('')
     // tinh tong tien
     ;(function tinhTien() {
-        tongTien = 
-            products.filter(product => product.luotMua > 0)
+      let  tongTien = 
+            data.products.filter(product => product.luotMua > 0)
                     .reduce((total,product) => total + product.luotMua * product.price, 0)
     tienElement.innerHTML = `${tongTien}.000đ`     
     })()
+
+    cartNumber.innerHTML = `${data.tongLuotMua}`
+    storage.set(data)
 }
+renderCart()
 
 // handle click mua
 mainProductList.onclick = (e) => {
     if(e.target.closest('.product-modal-buy')){
         let index = e.target.closest('.product-modal-buy').dataset.index;
-        products[index].luotMua++;
+        data = storage.get()     
+        data.products[index].luotMua++;
         // render so luong mua
-        tongLuotMua++;
-        cartNumber.innerHTML = `${tongLuotMua}`
-        renderCart()
+        data.tongLuotMua++;
+        cartNumber.innerHTML = `${data.tongLuotMua}`
+        storage.set(data)
+        renderCart();
     }
 }
 
@@ -412,27 +125,31 @@ mainProductList.onclick = (e) => {
 cartItemList.onclick = (e) => {
     if(e.target.closest('.buy-done-item-btn-add')){
         let index = e.target.dataset.index;
-        products[index].luotMua++
-        tongLuotMua++
-        cartNumber.innerHTML = `${tongLuotMua}`
+        data = storage.get()     
+        data.products[index].luotMua++
+        data.tongLuotMua++
+        cartNumber.innerHTML = `${data.tongLuotMua}`
+        storage.set(data)
         renderCart()
     }
     if(e.target.closest('.buy-done-item-btn-distract')){
-        console.log(e.target.dataset.index)
         let index = e.target.dataset.index;
-        products[index].luotMua--
-        tongLuotMua--
-        cartNumber.innerHTML = `${tongLuotMua}`
+        data = storage.get()     
+        data.products[index].luotMua--
+        data.tongLuotMua--
+        cartNumber.innerHTML = `${data.tongLuotMua}`
+        storage.set(data)
         renderCart()
     }
     if(e.target.closest('.buy-done-item-delete')){
 
         let index = e.target.closest('.buy-done-item-delete').dataset.index;
-        let boLuotMua = products[index].luotMua;
-        tongLuotMua = tongLuotMua -boLuotMua;
-        cartNumber.innerHTML = `${tongLuotMua}`
-        products[index].luotMua = 0;
-        console.log(products[index].luotMua)
+        data = storage.get()     
+        let boLuotMua = data.products[index].luotMua;
+        data.tongLuotMua = data.tongLuotMua -boLuotMua;
+        cartNumber.innerHTML = `${data.tongLuotMua}`
+        data.products[index].luotMua = 0;
+        storage.set(data)
         renderCart()
     }
 }
