@@ -301,13 +301,13 @@ const cartItemList = $('.buy-done-list')
 const tienElement = $('.buy-done-total-coin')
 const mainProductList = $('.main-product-list')
 
-// tinh tong tien
-function tinhTien() {
-        tongTien = 
-            products.filter(product => product.luotMua > 0)
-                    .reduce((total,product) => total + product.luotMua * product.price, 0)
-    tienElement.innerHTML = `${tongTien}.000đ`     
-}
+// // tinh tong tien
+// ;(function tinhTien() {
+//         tongTien = 
+//             products.filter(product => product.luotMua > 0)
+//                     .reduce((total,product) => total + product.luotMua * product.price, 0)
+//     tienElement.innerHTML = `${tongTien}.000đ`     
+// })()
 
 // render sp
 productList.innerHTML = products.map((product, index) => {
@@ -387,7 +387,13 @@ var productsMua =
                 </div>
             `)          
         cartItemList.innerHTML = productsMua.join('')
-    tinhTien()
+    // tinh tong tien
+    ;(function tinhTien() {
+        tongTien = 
+            products.filter(product => product.luotMua > 0)
+                    .reduce((total,product) => total + product.luotMua * product.price, 0)
+    tienElement.innerHTML = `${tongTien}.000đ`     
+    })()
 }
 
 // handle click mua

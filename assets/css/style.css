@@ -453,7 +453,8 @@ body{
 /* main-right */
 .main-right{
     flex-basis: calc(0.8 * (100% - 30px));
-
+    display: flex;
+    flex-direction: column;
 }
 
 .main-title{
@@ -591,6 +592,7 @@ body{
 .main-change-page{
     display: flex;
     margin-top: 40px;
+    margin-top: auto;
 }
 
 .main-change-page-list{
