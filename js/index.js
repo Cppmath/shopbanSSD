@@ -299,6 +299,7 @@ const productList = $('.main-product-list')
 const cartNumber = $('.header-cart-number')
 const cartItemList = $('.buy-done-list')
 const tienElement = $('.buy-done-total-coin')
+const mainProductList = $('.main-product-list')
 
 // tinh tong tien
 function tinhTien() {
@@ -314,7 +315,7 @@ productList.innerHTML = products.map((product, index) => {
     <!-- product-item 0-->
     <div class="product-item" data-index = "${product.id}">
         <div class="product-modal">
-            <div class="product-modal-buy">
+            <div class="product-modal-buy" data-index="${product.id}">
                 <i class="product-modal-buy-icon fa-solid fa-cart-plus"></i>
             </div>
             <div class="product-modal-show">
@@ -390,16 +391,16 @@ var productsMua =
 }
 
 // handle click mua
-const clickMuas = $$('.product-modal-buy')
-    Array.from(clickMuas).forEach((clickMua, index) => {
-    clickMua.onclick = () => {
+mainProductList.onclick = (e) => {
+    if(e.target.closest('.product-modal-buy')){
+        let index = e.target.closest('.product-modal-buy').dataset.index;
         products[index].luotMua++;
         // render so luong mua
         tongLuotMua++;
         cartNumber.innerHTML = `${tongLuotMua}`
         renderCart()
     }
-});
+}
 
 // handle cart
 cartItemList.onclick = (e) => {
@@ -418,8 +419,6 @@ cartItemList.onclick = (e) => {
         cartNumber.innerHTML = `${tongLuotMua}`
         renderCart()
     }
-    // console.log(e.target.dataset.index)
-
     if(e.target.closest('.buy-done-item-delete')){
 
         let index = e.target.closest('.buy-done-item-delete').dataset.index;
