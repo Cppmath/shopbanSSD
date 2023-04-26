@@ -1,4 +1,9 @@
 .slay-out{
+    display: none;
+}
+
+.slay-out.js-active{
+    display: block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -8,13 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.slay-out-box{
-    width: 970px;
-    height: 527px;
-    background-color: #fff;
-    position: relative;
 }
 
 .slay_out-buy-done-item-delete{
@@ -33,6 +31,13 @@
     font-weight: 700;
     font-size: 3rem;
     margin-top: 30px;
+}
+
+.slay-out-box{
+    width: 970px;
+    height: 527px;
+    background-color: #fff;
+    position: relative;
 }
 
 .slay_out-buy-done-item{
@@ -59,6 +64,7 @@
 
 .slay_out-buy-done-item-title{
     font-size: 2.5rem;
+    margin-top: 20px;
 }
 
 .slay_out-buy-done-item-price-all{

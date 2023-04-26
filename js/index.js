@@ -24,7 +24,7 @@ productList.innerHTML = data.products.map((product, index) => {
             <div class="product-modal-buy" data-index="${product.id}">
                 <i class="product-modal-buy-icon fa-solid fa-cart-plus"></i>
             </div>
-            <div class="product-modal-show">
+            <div class="product-modal-show" data-index="${product.id}">
                 <i class="product-modal-show-icon fa-solid fa-eye"></i>
             </div>
         </div>
@@ -121,6 +121,77 @@ mainProductList.onclick = (e) => {
     }
 }
 
+// handle click show 
+    // open show
+    const slayoutElement = $('.slay-out')
+    const slayoutSubboxElement = $('.slay-out-subbox')
+    mainProductList.onclick = (e) => {
+        if(e.target.closest('.product-modal-show')){
+            let index = e.target.closest('.product-modal-show').dataset.index;
+            let product = data.products[index]
+            slayoutSubboxElement.innerHTML = `
+                    <!-- item -->
+                    <div class="slay_out-buy-done-item">
+                        <div class="slay_out-buy-done-item-pic">
+                            <img class="slay_out-buy-done-item-img" src="${product.img + '.webp'}" alt="" >
+                        </div>
+                        <div class="slay_out-buy-done-item-info">
+                            <div class="slay_out-buy-done-item-title">
+                                ${product.title}
+                            </div>
+                            <div class="slay_out-buy-done-item-price-all">
+                                <p class="slay_out-buy-done-item-price">
+                                    ${product.price + '.000đ'}
+                                </p>
+                                <p class="slay_out-buy-done-item-before-price">
+                                    ${product.oldPrice + '.000đ'}
+                                </p>
+                            </div>
+                            <p class="slay_out-buy-done-item-desc">
+                                ${product.desc}
+                            </p>
+                            <div class="slay_out-buy-done-item-quality">
+                                Số lượng: 
+                            </div>
+                            <div class="slay_out-buy-done-item-btn">
+                                <span class="slay_out-buy-done-item-btn-distract">
+                                    -
+                                </span>
+                                <span class="slay_out-buy-done-item-number">
+                                    1
+                                </span>
+                                <span class="slay_out-buy-done-item-btn-add">
+                                    +
+                                </span>
+                            </div>
+                            <a href="#" class="slay_out-mua-hang">MUA NGAY</a>
+                        </div>   
+                    </div> 
+                    <!-- slay-out-show -->
+                    <div class="slay_out-show">
+                        <div class="slay_out-show-pic">
+                            <img src="./assets/img/show/0.webp" alt="" class="slay_out-show-img"></div>
+                        <div class="slay_out-show-pic">
+                            <img src="./assets/img/show/1.webp" alt="" class="slay_out-show-img"></div>
+                        <div class="slay_out-show-pic">
+                            <img src="./assets/img/show/2.webp" alt="" class="slay_out-show-img"></div>
+                    </div>        
+            `
+            slayoutElement.classList.add('js-active')
+        }
+    }
+    // close show
+    const closeShow = $('.slay_out-buy-done-item-delete')
+    closeShow.onclick = () => {
+        console.log('123')
+        slayoutElement.classList.remove('js-active')
+    }
+    slayoutElement.onclick = () => {
+        slayoutElement.classList.remove('js-active')
+    }
+    slayoutSubboxElement.onclick = (e) => {
+        e.stopPropagation()
+    }
 // handle cart
 cartItemList.onclick = (e) => {
     if(e.target.closest('.buy-done-item-btn-add')){
