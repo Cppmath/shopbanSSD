@@ -151,13 +151,13 @@ mainProductList.onclick = (e) => {
                             Số lượng: 
                         </div>
                         <div class="slay_out-buy-done-item-btn">
-                            <span class="slay_out-buy-done-item-btn-distract">
+                            <span class="slay_out-buy-done-item-btn-distract" data-index = "${product.id}">
                                 -
                             </span>
                             <span class="slay_out-buy-done-item-number">
                                 ${product.luotMua}
                             </span>
-                            <span class="slay_out-buy-done-item-btn-add">
+                            <span class="slay_out-buy-done-item-btn-add" data-index = "${product.id}">
                                 +
                             </span>
                         </div>
@@ -177,11 +177,10 @@ mainProductList.onclick = (e) => {
         slayoutElement.classList.add('js-active')
     }
     
-    }
+}
     // close show
     const closeShow = $('.slay_out-buy-done-item-delete')
     closeShow.onclick = () => {
-        console.log('123')
         slayoutElement.classList.remove('js-active')
     }
     slayoutElement.onclick = () => {
@@ -189,7 +188,126 @@ mainProductList.onclick = (e) => {
     }
     slayoutSubboxElement.onclick = (e) => {
         e.stopPropagation()
+        // handle add distract sp
+        if(e.target.closest('.slay_out-buy-done-item-btn-add')){
+            let index = e.target.dataset.index;
+            data = storage.get()
+            data.products[index].luotMua++
+            data.tongLuotMua++
+            cartNumber.innerHTML = `${data.tongLuotMua}`
+            storage.set(data)
+            renderCart()
+            slayoutSubboxElement.innerHTML = `
+                <!-- item -->
+                <div class="slay_out-buy-done-item">
+                    <div class="slay_out-buy-done-item-pic">
+                        <img class="slay_out-buy-done-item-img" src="${data.products[index].img + '.webp'}" alt="" >
+                    </div>
+                    <div class="slay_out-buy-done-item-info">
+                        <div class="slay_out-buy-done-item-title">
+                            ${data.products[index].title}
+                        </div>
+                        <div class="slay_out-buy-done-item-price-all">
+                            <p class="slay_out-buy-done-item-price">
+                                ${data.products[index].price + '.000đ'}
+                            </p>
+                            <p class="slay_out-buy-done-item-before-price">
+                                ${data.products[index].oldPrice + '.000đ'}
+                            </p>
+                        </div>
+                        <p class="slay_out-buy-done-item-desc">
+                            ${data.products[index].desc}
+                        </p>
+                        <div class="slay_out-buy-done-item-quality">
+                            Số lượng: 
+                        </div>
+                        <div class="slay_out-buy-done-item-btn">
+                            <span data-index="${data.products[index].id}" class="slay_out-buy-done-item-btn-distract">
+                                -
+                            </span>
+                            <span class="slay_out-buy-done-item-number">
+                                ${data.products[index].luotMua}
+                            </span>
+                            <span data-index="${data.products[index].id}" class="slay_out-buy-done-item-btn-add">
+                                +
+                            </span>
+                        </div>
+                        <a href="#" class="slay_out-mua-hang">MUA NGAY</a>
+                    </div>   
+                </div> 
+                <!-- slay-out-show -->
+                <div class="slay_out-show">
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/0.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/1.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/2.webp" alt="" class="slay_out-show-img"></div>
+                </div>        
+        `
+        }
+        if(e.target.closest('.slay_out-buy-done-item-btn-distract')){
+            let index = e.target.dataset.index;
+            data = storage.get() 
+            data.products[index].luotMua--
+            if(data.products[index].luotMua <= 0) {data.products[index].luotMua = 0}
+            data.tongLuotMua--
+            if(data.tongLuotMua <= 0){data.tongLuotMua = 0}
+            cartNumber.innerHTML = `${data.tongLuotMua}`
+            storage.set(data)
+            renderCart()
+            slayoutSubboxElement.innerHTML = `
+                <!-- item -->
+                <div class="slay_out-buy-done-item">
+                    <div class="slay_out-buy-done-item-pic">
+                        <img class="slay_out-buy-done-item-img" src="${data.products[index].img + '.webp'}" alt="" >
+                    </div>
+                    <div class="slay_out-buy-done-item-info">
+                        <div class="slay_out-buy-done-item-title">
+                            ${data.products[index].title}
+                        </div>
+                        <div class="slay_out-buy-done-item-price-all">
+                            <p class="slay_out-buy-done-item-price">
+                                ${data.products[index].price + '.000đ'}
+                            </p>
+                            <p class="slay_out-buy-done-item-before-price">
+                                ${data.products[index].oldPrice + '.000đ'}
+                            </p>
+                        </div>
+                        <p class="slay_out-buy-done-item-desc">
+                            ${data.products[index].desc}
+                        </p>
+                        <div class="slay_out-buy-done-item-quality">
+                            Số lượng: 
+                        </div>
+                        <div class="slay_out-buy-done-item-btn">
+                            <span data-index="${data.products[index].id}" class="slay_out-buy-done-item-btn-distract">
+                                -
+                            </span>
+                            <span class="slay_out-buy-done-item-number">
+                                ${data.products[index].luotMua}
+                            </span>
+                            <span data-index="${data.products[index].id}" class="slay_out-buy-done-item-btn-add">
+                                +
+                            </span>
+                        </div>
+                        <a href="#" class="slay_out-mua-hang">MUA NGAY</a>
+                    </div>   
+                </div> 
+                <!-- slay-out-show -->
+                <div class="slay_out-show">
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/0.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/1.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/2.webp" alt="" class="slay_out-show-img"></div>
+                </div>        
+        `
+        }
     }
+    
+
 // handle cart
 cartItemList.onclick = (e) => {
     if(e.target.closest('.buy-done-item-btn-add')){
