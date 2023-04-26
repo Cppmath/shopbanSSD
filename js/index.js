@@ -107,8 +107,11 @@ function renderCart(){
 }
 renderCart()
 
-// handle click mua
+// handle click mua va show
+const slayoutElement = $('.slay-out')
+const slayoutSubboxElement = $('.slay-out-subbox')
 mainProductList.onclick = (e) => {
+    // mua
     if(e.target.closest('.product-modal-buy')){
         let index = e.target.closest('.product-modal-buy').dataset.index;
         data = storage.get()     
@@ -119,66 +122,61 @@ mainProductList.onclick = (e) => {
         storage.set(data)
         renderCart();
     }
-}
-
-// handle click show 
     // open show
-    const slayoutElement = $('.slay-out')
-    const slayoutSubboxElement = $('.slay-out-subbox')
-    mainProductList.onclick = (e) => {
-        if(e.target.closest('.product-modal-show')){
-            let index = e.target.closest('.product-modal-show').dataset.index;
-            let product = data.products[index]
-            slayoutSubboxElement.innerHTML = `
-                    <!-- item -->
-                    <div class="slay_out-buy-done-item">
-                        <div class="slay_out-buy-done-item-pic">
-                            <img class="slay_out-buy-done-item-img" src="${product.img + '.webp'}" alt="" >
+    if(e.target.closest('.product-modal-show')){
+        let index = e.target.closest('.product-modal-show').dataset.index;
+        let product = data.products[index]
+        slayoutSubboxElement.innerHTML = `
+                <!-- item -->
+                <div class="slay_out-buy-done-item">
+                    <div class="slay_out-buy-done-item-pic">
+                        <img class="slay_out-buy-done-item-img" src="${product.img + '.webp'}" alt="" >
+                    </div>
+                    <div class="slay_out-buy-done-item-info">
+                        <div class="slay_out-buy-done-item-title">
+                            ${product.title}
                         </div>
-                        <div class="slay_out-buy-done-item-info">
-                            <div class="slay_out-buy-done-item-title">
-                                ${product.title}
-                            </div>
-                            <div class="slay_out-buy-done-item-price-all">
-                                <p class="slay_out-buy-done-item-price">
-                                    ${product.price + '.000đ'}
-                                </p>
-                                <p class="slay_out-buy-done-item-before-price">
-                                    ${product.oldPrice + '.000đ'}
-                                </p>
-                            </div>
-                            <p class="slay_out-buy-done-item-desc">
-                                ${product.desc}
+                        <div class="slay_out-buy-done-item-price-all">
+                            <p class="slay_out-buy-done-item-price">
+                                ${product.price + '.000đ'}
                             </p>
-                            <div class="slay_out-buy-done-item-quality">
-                                Số lượng: 
-                            </div>
-                            <div class="slay_out-buy-done-item-btn">
-                                <span class="slay_out-buy-done-item-btn-distract">
-                                    -
-                                </span>
-                                <span class="slay_out-buy-done-item-number">
-                                    1
-                                </span>
-                                <span class="slay_out-buy-done-item-btn-add">
-                                    +
-                                </span>
-                            </div>
-                            <a href="#" class="slay_out-mua-hang">MUA NGAY</a>
-                        </div>   
-                    </div> 
-                    <!-- slay-out-show -->
-                    <div class="slay_out-show">
-                        <div class="slay_out-show-pic">
-                            <img src="./assets/img/show/0.webp" alt="" class="slay_out-show-img"></div>
-                        <div class="slay_out-show-pic">
-                            <img src="./assets/img/show/1.webp" alt="" class="slay_out-show-img"></div>
-                        <div class="slay_out-show-pic">
-                            <img src="./assets/img/show/2.webp" alt="" class="slay_out-show-img"></div>
-                    </div>        
-            `
-            slayoutElement.classList.add('js-active')
-        }
+                            <p class="slay_out-buy-done-item-before-price">
+                                ${product.oldPrice + '.000đ'}
+                            </p>
+                        </div>
+                        <p class="slay_out-buy-done-item-desc">
+                            ${product.desc}
+                        </p>
+                        <div class="slay_out-buy-done-item-quality">
+                            Số lượng: 
+                        </div>
+                        <div class="slay_out-buy-done-item-btn">
+                            <span class="slay_out-buy-done-item-btn-distract">
+                                -
+                            </span>
+                            <span class="slay_out-buy-done-item-number">
+                                ${product.luotMua}
+                            </span>
+                            <span class="slay_out-buy-done-item-btn-add">
+                                +
+                            </span>
+                        </div>
+                        <a href="#" class="slay_out-mua-hang">MUA NGAY</a>
+                    </div>   
+                </div> 
+                <!-- slay-out-show -->
+                <div class="slay_out-show">
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/0.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/1.webp" alt="" class="slay_out-show-img"></div>
+                    <div class="slay_out-show-pic">
+                        <img src="./assets/img/show/2.webp" alt="" class="slay_out-show-img"></div>
+                </div>        
+        `
+        slayoutElement.classList.add('js-active')
+    }
+    
     }
     // close show
     const closeShow = $('.slay_out-buy-done-item-delete')
