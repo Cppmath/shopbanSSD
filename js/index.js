@@ -1,5 +1,7 @@
 import storage from "./ulti/storage.js";
-import { dataS } from './data/data.js'
+import  dataS from './data/data.js'
+import { filterBtn } from './main.js'
+
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
@@ -16,47 +18,54 @@ var data = storage.get()
     }
 
 // render sp
-productList.innerHTML = data.products.map((product, index) => {
-    return `
-    <!-- product-item 0-->
-    <div class="product-item" data-index = "${product.id}">
-        <div class="product-modal">
-            <div class="product-modal-buy" data-index="${product.id}">
-                <i class="product-modal-buy-icon fa-solid fa-cart-plus"></i>
+export default function renderSP(callback = (product) => true){
+    console.log(data.products.filter(callback))
+
+    productList.innerHTML = data.products.filter(callback)
+            .map((product, index) => {
+        return `
+        <!-- product-item 0-->
+        <div class="product-item" data-index = "${product.id}">
+            <div class="product-modal">
+                <div class="product-modal-buy" data-index="${product.id}">
+                    <i class="product-modal-buy-icon fa-solid fa-cart-plus"></i>
+                </div>
+                <div class="product-modal-show" data-index="${product.id}">
+                    <i class="product-modal-show-icon fa-solid fa-eye"></i>
+                </div>
             </div>
-            <div class="product-modal-show" data-index="${product.id}">
-                <i class="product-modal-show-icon fa-solid fa-eye"></i>
+            <div class="product-item-sale">
+                -${product.sale}%
+            </div>
+            <img class="product-item-img" src="${product.img + '.webp'}" alt="">
+            <span class="product-item-title">
+                ${product.title}
+            </span>
+            <div class="product-item-price">
+                <span class="product-item-current_price">
+                    ${product.price + '.000đ'}
+                </span>
+                <span class="product-item-before_price">
+                    ${product.oldPrice + '.000đ'}
+                </span>
+            </div>
+            <div class="product-item-rate">
+                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                <span class="product-item-rate-number">
+                    (${product.vote} đánh giá)
+                </span>
             </div>
         </div>
-        <div class="product-item-sale">
-            -${product.sale}%
-        </div>
-        <img class="product-item-img" src="${product.img + '.webp'}" alt="">
-        <span class="product-item-title">
-            ${product.title}
-        </span>
-        <div class="product-item-price">
-            <span class="product-item-current_price">
-                ${product.price + '.000đ'}
-            </span>
-            <span class="product-item-before_price">
-                ${product.oldPrice + '.000đ'}
-            </span>
-        </div>
-        <div class="product-item-rate">
-            <i class="product-item-rate-icon fa-solid fa-star"></i>
-            <i class="product-item-rate-icon fa-solid fa-star"></i>
-            <i class="product-item-rate-icon fa-solid fa-star"></i>
-            <i class="product-item-rate-icon fa-solid fa-star"></i>
-            <i class="product-item-rate-icon fa-solid fa-star"></i>
-            <span class="product-item-rate-number">
-                (${product.vote} đánh giá)
-            </span>
-        </div>
-    </div>
-    `
-})
-    .join('')
+        `
+    })
+        .join('')
+
+}
+renderSP()
 
 // render cart
 function renderCart(){

@@ -1,5 +1,5 @@
 import storage from "../ulti/storage.js"
-export const dataS = {
+const dataS = {
     products : [
         {
             id: 0,
@@ -12,6 +12,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 1,
@@ -24,6 +25,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 2,
@@ -36,6 +38,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 3,
@@ -48,6 +51,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 4,
@@ -60,6 +64,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 5,
@@ -72,6 +77,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 6,
@@ -84,6 +90,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 7,
@@ -96,6 +103,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 8,
@@ -108,6 +116,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 9,
@@ -120,6 +129,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 10,
@@ -132,6 +142,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 11,
@@ -144,6 +155,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 12,
@@ -156,6 +168,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 13,
@@ -168,6 +181,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 14,
@@ -180,6 +194,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 15,
@@ -192,6 +207,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 16,
@@ -204,6 +220,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 17,
@@ -216,6 +233,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 18,
@@ -228,6 +246,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 19,
@@ -240,6 +259,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 20,
@@ -252,6 +272,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 21,
@@ -264,6 +285,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 22,
@@ -276,6 +298,7 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         },
         {
             id: 23,
@@ -288,8 +311,10 @@ export const dataS = {
             sale: 29,
             rate: 5,
             vote: 100,
+            typeSP: ['acer','25']
         }   
 ],
     tongLuotMua: 0,
 }
 
+export default dataS
