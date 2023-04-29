@@ -23,3 +23,14 @@ filterBtn.onclick = () => {
     renderSP(filterSP)
     rulesFilter = []
 }
+
+// chuc nang chuyen trang 
+const pageElements = $$('.main-change-page-item')
+
+pageElements.forEach((pageElement, index) => {
+    pageElement.onclick = () => {
+        $('.main-change-page-item.active-page').classList.remove('active-page')
+        pageElement.classList.add('active-page')
+        renderSP()
+    }
+})

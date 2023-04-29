@@ -68,7 +68,32 @@ body{
     margin-left: 10px;
 }
 
-.header-top-icon{
+.header-top-icon{    
+}
+
+.header-top-table{
+    list-style-type: none;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 30px;
+    color: rgb(0, 0, 0);
+    width: 100px;
+    /* height: 138px; */
+    min-height: 0;
+    z-index: 9;
+    left: -10px;
+    box-shadow: 0 0 2px #a9a9a9;
+    display: none;
+}
+.header-top-list:hover .header-top-table{
+    display: block;
+}
+
+.header-top-table-item{
+    padding: 0px 10px;
+}
+.header-top-table-item:hover{
+    background-color: #a9a9a9;
 }
 
 /* header-main */
@@ -365,6 +390,7 @@ body{
     text-decoration: none;
     color: #fff;
     line-height: 55px;
+    position: relative;
 }
 
 .header-menu-item:first-child{
@@ -384,6 +410,30 @@ body{
 
 .header-menu-item-icon{
     margin-right: 8px;
+}
+
+.header-submenu-list{
+    position: absolute;
+    background-color: #fff;
+    list-style-type: none;
+    width: 100%;
+    min-height: 0;
+    top: 52px;
+    left: 0;
+    color: #000;
+    box-shadow: 0px 3px 3px #393a44;
+    z-index: 9;
+    display: none;
+}
+.header-menu-item:hover .header-submenu-list{
+    display: block;
+}
+
+.header-submenu-item{
+    padding: 0px 10px
+}
+.header-submenu-item:hover{
+    background-color: #a9a9a9;
 }
 
 
@@ -604,6 +654,7 @@ body{
 
 .product-item-rate-icon{
     font-size: 1.4rem;
+    color: #a9a9a9;
 }
 
 .product-item-rate-number{

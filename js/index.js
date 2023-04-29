@@ -19,10 +19,18 @@ var data = storage.get()
 
 // render sp
 export default function renderSP(callback = (product) => true){
-    console.log(data.products.filter(callback))
-
     productList.innerHTML = data.products.filter(callback)
             .map((product, index) => {
+                let voteList = []
+                for(let i = 1; i <= 5; i++){
+                    if(i<=product.rate){
+                        console.log(product.rate)
+                        voteList.push(`<i style="color:#ffba00" class="product-item-rate-icon fa-solid fa-star"></i>`)
+                    } else{
+                        voteList.push(`<i class="product-item-rate-icon fa-solid fa-star"></i>`)
+                    }
+                }
+
         return `
         <!-- product-item 0-->
         <div class="product-item" data-index = "${product.id}">
@@ -50,11 +58,8 @@ export default function renderSP(callback = (product) => true){
                 </span>
             </div>
             <div class="product-item-rate">
-                <i class="product-item-rate-icon fa-solid fa-star"></i>
-                <i class="product-item-rate-icon fa-solid fa-star"></i>
-                <i class="product-item-rate-icon fa-solid fa-star"></i>
-                <i class="product-item-rate-icon fa-solid fa-star"></i>
-                <i class="product-item-rate-icon fa-solid fa-star"></i>
+                ${voteList.join('')}
+
                 <span class="product-item-rate-number">
                     (${product.vote} đánh giá)
                 </span>
@@ -62,7 +67,7 @@ export default function renderSP(callback = (product) => true){
         </div>
         `
     })
-        .join('')
+        .join('') || 'KHÔNG CÓ SẢN PHẨM PHÙ HỢP'
 
 }
 renderSP()

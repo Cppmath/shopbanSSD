@@ -10,7 +10,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
@@ -23,7 +23,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
@@ -36,7 +36,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
@@ -49,7 +49,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
@@ -62,7 +62,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
@@ -75,7 +75,7 @@ const dataS = {
             luotMua: 0,
             desc: 'Chuẩn SSD: 2.5 inches Tốc độ đọc: 500 MB/s Tốc độ ghi: 360 MB/s Bảo hành chính hãng 3 năm.',
             sale: 29,
-            rate: 5,
+            rate: 2,
             vote: 100,
             typeSP: ['acer','25']
         },
