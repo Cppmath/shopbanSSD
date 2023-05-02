@@ -31,6 +31,5 @@ pageElements.forEach((pageElement, index) => {
     pageElement.onclick = () => {
         $('.main-change-page-item.active-page').classList.remove('active-page')
         pageElement.classList.add('active-page')
-        renderSP()
     }
 })
